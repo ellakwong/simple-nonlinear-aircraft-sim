@@ -23,23 +23,6 @@ class AircraftPhysicalProperties:
 
 
 @dataclass
-class AircraftSteadyState:
-    # Note: all other states not in here are assumed to
-    # be zero at the steady state, or do't contribute to
-    # the dynamics.
-    altitude_m: float = 0.0
-    density_kg_m2: float = 0.0
-    true_airspeed_m_s: float = 0.0
-    alpha_rad: float = 0.0
-    theta_rad: float = 0.0
-    de_rad: float = 0.0
-    thrust_N: float = 0.0
-    CD_1: float = 0.0
-    CL_1: float = 0.0
-    Cm_1: float = 0.0
-
-
-@dataclass
 class AircraftCoeffs:
     # For drag
     CD_0: float = 0.0

@@ -13,8 +13,8 @@ def dxdt(
 ):
     """
     Calculate the state derivative based on the current state.
-    Note: I'm doing most of this in vector form because that's just nicer to work with,
-    and the form of these equations is mostly in the body frame.
+    Note: I'm doing most of this in vector form because that's just nicer to work with.
+    The form of these equations is mostly in the body frame.
     """
     # Calculate forces/moments
     FX, FY, FZ, Mx, My, Mz = calculate_forces_and_moments.calculate(
@@ -67,8 +67,8 @@ def dxdt(
     R_ib = np.linalg.inv(R_bi)  # to inertial, from body
 
     # Derivatives calculation
-    Pdot = R_ib @ v_b  # where P = [x, y, z], z = -alt
-    Omegadot = R_kinematic @ w_b  # where Omega = [phi, tht, psi]
+    Pdot = R_ib @ v_b  # position vector, where P = [x, y, z], z = -alt
+    Omegadot = R_kinematic @ w_b  # orientation "vector", where Omega = [phi, tht, psi]
     vdot_b = 1 / props.mass * F - np.cross(w_b, v_b)
     wdot_b = np.linalg.inv(I) @ (M - np.cross(w_b, I @ w_b))
 

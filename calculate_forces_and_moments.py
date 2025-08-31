@@ -30,7 +30,8 @@ def calculate(
     m = props.mass
 
     # The coefficients are typically derived using non-dimensionalised states, which is why the p, q, r parts
-    # have extra stuff going on in these expansions. aph, bta and the control deflections are already non-dimensional.
+    # have extra stuff going on in these expansions to non-dimensionalise them.
+    # aph, bta and the control deflections are already non-dimensional.
 
     # Lift
     CL = (
@@ -84,7 +85,7 @@ def calculate(
     )
     N = Cn * qbar * S * b
 
-    # Transform lift and drag (defined in stability axis) into body frame
+    # Transform lift and drag (which are defined in stability frame) into body frame
     FAX = -D * np.cos(aph) + Lift * np.sin(aph)
     FAZ = -Lift * np.cos(aph) - D * np.sin(aph)
 
