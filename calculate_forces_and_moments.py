@@ -17,8 +17,8 @@ def calculate(
     """
     # Things we'll need, derived from the state
     Vtas = np.sqrt(state.u_m_s**2 + state.v_m_s**2 + state.w_m_s**2)
-    bta = np.asin(state.v_m_s / Vtas)
-    aph = np.asin(state.w_m_s / (Vtas * np.cos(bta)))
+    bta = np.arcsin(state.v_m_s / Vtas)
+    aph = np.arcsin(state.w_m_s / (Vtas * np.cos(bta)))
     rho = ussa1976(state.altitude_m)
     qbar = 0.5 * rho * Vtas**2
     g = 9.81
