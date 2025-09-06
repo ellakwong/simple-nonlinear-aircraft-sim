@@ -23,6 +23,7 @@ import matplotlib.pyplot as plt
 import copy
 
 import cessnalike_aircraft
+import B737
 import solver
 import trimmer
 from aircraft import AircraftState
@@ -66,7 +67,8 @@ def log_state(t, state: AircraftState):
 
 def run_sim():
     # Physical properties and aerodynamic coefficients for a Cessna-like aircraft
-    cessna_properties, cessna_coeffs = cessnalike_aircraft.get_cessna_info()
+    #cessna_properties, cessna_coeffs = cessnalike_aircraft.get_cessna_info()
+    cessna_properties, cessna_coeffs = B737.get_737_500_info()
 
     # Initial conditions to find trim at
     altitude_m_trim = 1524
